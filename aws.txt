@@ -5,3 +5,7 @@ git add filename
 git commit -m "commit"
 git push repo url copy
 hgjkcgkjgsakjgkjsavvababa
+gdcg ak
+fjgskjcfghjk hsjck
+fhjchivwvhesj
+hjvhshowi
