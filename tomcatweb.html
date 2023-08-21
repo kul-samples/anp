@@ -1,59 +1,38 @@
-body {
-  background-color: white;
-}
+---
+layout: actions
+title: upload
+---
+<form id="upload-form">
+	<div class="input-group mb-3">
+		<label for="file" aria-hidden="false" class="visually-hidden">File</label>
+		<input class="form-control" type="file" id="file" required>
+	</div>
+	<div class="row">
+		<div class="input-group mb-3">
+			<label class="input-group-text" for="password">Password</label>
+			<input class="form-control" type="password" id="password" autocomplete="new-password" minlength="4"
+				maxlength="500" aria-label="password" placeholder="Optional">
+		</div>
+		<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+			<button class="btn btn-success btn-lg" type="submit">Upload</button>
+		</div>
+	</div>
+</form>
 
-.container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.row {
-  display: flex;
-  width: 80%;
-}
-
-.left-logo,
-.right-logo {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.left-logo img,
-.right-logo img {
-  opacity: 0;
-  transition: opacity 5s;
-}
-
-.left-bg,
-.right-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-
-.left-logo:hover .left-bg {
-  opacity: 1;
-  background-image: url(images/bg-left.png);
-}
-
-.right-logo:hover .right-bg {
-  opacity: 1;
-  background-image: url(images/bg-right.png);
-}
-
-.left-logo img,
-.right-logo img {
-  opacity: 1;
-}
+<div id="success">
+	<form>
+		<div class="input-group mb-3">
+			<label class="input-group-text" for="url">URL</label>
+			<input class="form-control" id="url" readonly autofocus />
+		</div>
+		<div class="input-group mb-3">
+			<label class="input-group-text" for="deletion-password">Deletion Password</label>
+			<input class="form-control" id="deletion-password" readonly />
+		</div>
+		<div class="input-group mb-3">
+			<label class="input-group-text" for="server-password">Password</label>
+			<input class="form-control" id="server-password" readonly />
+		</div>
+		<button class="btn btn-success btn-lg" type="reset" onclick="location.reload()">Back</button>
+	</form>
+</div>
