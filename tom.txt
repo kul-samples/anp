@@ -8,13 +8,9 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: 'https://github.com/kushilkumar/kushi.git']]])
 
                 // Copy the file to Tomcat webapps directory
-                sh "cp Lab6A.war /opt/apache-tomcat-9.0.79/webapps/ROOT"
+                sh "cp aws.txt /opt/apache-tomcat-9.0.79/webapps/ROOT"
 
-                // Stop Tomcat (optional)
-                sh "/opt/apache-tomcat-9.0.79/bin/shutdown.sh"
-
-                // Start Tomcat (optional)
-                sh "/opt/apache-tomcat-9.0.79/bin/startup.sh"
+             
             }
         }
     }
