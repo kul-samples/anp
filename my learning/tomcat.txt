@@ -1,0 +1,95 @@
+pipeline {
+    agent any
+    
+    environment {
+        TOMCAT_HOST = '35.154.223.121'
+        TOMCAT_USER = 'tomcat'
+        TOMCAT_PATH = '/opt/tomcat/webapps'
+    }
+    
+    stages {
+        stage('Clone and Build') {
+            steps {
+                script {
+                    // Clone the repository
+                    git branch: 'master', url: 'https://github.com/kushilkumar/kushi.git'
+                    
+                    // Build the web application
+                    dir('your-web-app') {
+                        sh 'mvn clean package'
+                    }
+                }
+            }
+        }
+        
+        stage('Deploy to Tomcat') {
+            steps {
+                script {
+                    // Copy the .war file to the Tomcat server
+                    sshPublisher(publishers: [sshPublisherDesc(configName: 'TomcatSSH', transfers: [
+                        sshTransfer(execCommand: "cp sample.war " + TOMCAT_PATH, 
+                                    execTimeout: 120000, 
+                                    remoteDirectory: TOMCAT_PATH)
+                    ])])
+                }
+            }
+        }
+    }
+}
+###################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+pipeline {
+    agent any
+    
+    environment {
+        TOMCAT_HOST = '35.154.223.121'
+        TOMCAT_USER = 'tomcat'
+        TOMCAT_PATH = '/opt/tomcat/webapps'
+        WAR_FILE = 'sample.war'
+    }
+    
+    stages {
+        stage('Clone Repository and Deploy to Tomcat') {
+            steps {
+                script {
+                    // Clone the repository
+                     git branch: 'master', url: 'https://github.com/kushilkumar/kushi.git'
+                    
+                    // Deploy the sample.war file to Tomcat
+                    def remoteFilePath = "${TOMCAT_PATH}/${WAR_FILE}"
+                    
+                    sshPublisher(publishers: [sshPublisherDesc(configName: 'TomcatSSH', transfers: [
+                        sshTransfer(execCommand: "cp sample.war/${WAR_FILE} ${remoteFilePath}", 
+                                    execTimeout: 120000, 
+                                    remoteDirectory: TOMCAT_PATH)
+                    ])])
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+sudo crontab -e
+
+
+2 * * * * /path/to/mysql
+ save this file 
+
+sudo crontab -l
+
+
+grep " /bin/bash /home/ubuntu/file/hemanth.sh" /var/log/syslog
+
+
+
+
+*/2 * * * * sudo mysql > /path/to/output.log 2>&1
+

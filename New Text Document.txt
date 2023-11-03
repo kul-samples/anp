@@ -1,0 +1,85 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo "Copying files to Windows server"
+      - scp -i /home/ec2-user/kushal.pem source-files -r .git@github.com:kushilkumar/windows.git/ SSS2022259@192.168.29.183:C:\Users\SSS2022259\pipeline
+      # Add any other build commands you need
+
+artifacts:
+  files: '**/*'
+
+
+
+
+scp -i /path/to/your/linux/key.pem -r /path/to/source/files/ SSS2022259@192.168.29.183:"C:\Users\SSS2022259\pipeline"
+
+
+
+
+version: 0.0
+os: windows
+
+files:
+  - source: /
+    destination: C:\Users\SSS2022259\pipeline
+
+hooks:
+  - BeforeInstall:
+      - location: scripts/CreateDirectory.bat
+        timeout: 300
+
+
+
+
+version: 0.0
+os: windows
+files:
+  - source: \index.html
+    destination: c:\inetpub\wwwroot
+hooks:
+  BeforeInstall:
+    - location: \before-install.bat
+      timeout: 900
+
+
+
+
+
+
+
+
+
+
+Set-AWSCredential -AccessKey <AKIAYT4VWTLNSK7LNTZW> -SecretKey <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
+> -StoreAs MyProfile
+
+
+
+
+$deploymentId = "d-LSF1DVVC0"
+$applicationName = "new_application"
+$deploymentStatus = Get-CodeDeployDeployment -DeploymentId $deploymentId -ApplicationName $applicationName
+
+# Display the deployment status
+$deploymentStatus.Status
+
+
+MG&So-Jlj@7lr=L=3GU3ehu2eV7umKkH   -----rdp passw
+
+
+
+wget https://aws-codedeploy-us-east-1.s3.amazonaws.com/latest/codedeploy-agent.msi
+
+
+version: 0.2
+
+
+
+artifacts:
+  files: '**/*'
+
+
+
+

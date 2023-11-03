@@ -1,0 +1,18 @@
+
+  user   = admin
+
+password = devops123
+
+
+
+pscp -i C:\path\my-key-pair.ppk C:\path\Sample_file.txt instance-user-name@instance-public-dns-name:/home/instance-user-name/Sample_file.txt
+
+pscp -i C:\Users\SSS2022259\Downloads\kushalpem.ppk C:\Users\SSS2022259\OneDrive\Desktop\lll\emptable.csv ubuntu@13.232.217.162:/home/ubuntu/
+
+
+
+
+C:\Users\SSS2022259\OneDrive\Desktop\AWS.txt
+
+
+pscp -P 22 AWS.txt ubuntu@13.232.217.162:/home/ubuntu

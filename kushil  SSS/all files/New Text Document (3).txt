@@ -1,0 +1,33 @@
+CREATE USER 'kushil'@'%' IDENTIFIED BY --disabled-password;
+ALTER USER 'kushil'@'%' PASSWORD EXPIRE NEVER;
+
+GRANT ALL PRIVILEGES ON *.* TO 'kushil'@'%';
+
+
+###
+
+
+touch ~/.my.cnf
+nano ~/.my.cnf
+chmod 600 ~/.my.cnf
+
+
+[client]
+user=username
+password=password
+
+##
+
+
+#!/bin/bash
+
+# Replace 'newuser' with your desired username
+USERNAME="test"
+
+# Create a new user with sudo privileges
+sudo useradd -m -s /bin/bash "$USERNAME"
+echo "$USERNAME ALL=(ALL:ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/"$USERNAME"
+
+# Install MySQL (or any other desired packages)
+sudo apt update
+sudo apt-get install -y mysql-server

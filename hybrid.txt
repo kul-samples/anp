@@ -1,0 +1,11 @@
+# installing SSM Agent on EC2 instances for Windows Server & Hybrid Activation the windows instance SSM Agent
+$code = "WNzghC1dMueCYzhE6sLf"
+$id = "c3a04c8a-9883-4a85-a683-cb3bb9a38910"
+$region = "us-east-1"
+$dir = $env:TEMP + "\ssm"
+New-Item -ItemType directory -Path $dir -Force
+cd $dir
+(New-Object System.Net.WebClient).DownloadFile("https://amazon-ssm-$region.s3.$region.amazonaws.com/latest/windows_amd64/AmazonSSMAgentSetup.exe", $dir + "\AmazonSSMAgentSetup.exe")
+Start-Process .\AmazonSSMAgentSetup.exe -ArgumentList @("/q", "/log", "install.log", "CODE=$code", "ID=$id", "REGION=$region") -Wait
+Get-Content ($env:ProgramData + "\Amazon\SSM\InstanceData\registration")
+Get-Service -Name "AmazonSSMAgent"   

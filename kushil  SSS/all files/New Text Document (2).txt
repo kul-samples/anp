@@ -1,0 +1,28 @@
+#!/bin/bash
+apt update
+apt install -y mysql-server
+service mysql start
+password=K#1122@aaaa
+mysql -e "CREATE USER 'My_username'@'%' IDENTIFIED BY 'K#1122@aaaa';"
+mysql -e "CREATE DATABASE my_database;"
+mysql -e "GRANT ALL PRIVILEGES ON my_database.* TO 'My_username'@'%';"
+mysql -e "FLUSH PRIVILEGES;"
+import mysql.connector
+cnx = mysql.connector.connect(
+    host="%",
+    user="My_username",
+    password="K#1122@aaaa",
+    database="my_database"
+)
+cursor = cnx.cursor()
+create_table_query = """
+CREATE TABLE my_table (
+    column1 INT,
+    column2 VARCHAR(255),
+    column3 DATE
+)
+"""
+cursor.execute(create_table_query)
+cnx.commit()
+cnx.close()
+

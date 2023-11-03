@@ -1,0 +1,59 @@
+body {
+  background-color: white;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.row {
+  display: flex;
+  width: 80%;
+}
+
+.left-logo,
+.right-logo {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.left-logo img,
+.right-logo img {
+  opacity: 0;
+  transition: opacity 5s;
+}
+
+.left-bg,
+.right-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.left-logo:hover .left-bg {
+  opacity: 1;
+  background-image: url(images/bg-left.png);
+}
+
+.right-logo:hover .right-bg {
+  opacity: 1;
+  background-image: url(images/bg-right.png);
+}
+
+.left-logo img,
+.right-logo img {
+  opacity: 1;
+}

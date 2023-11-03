@@ -1,0 +1,12 @@
+1.git --version
+2.git init
+3.git config --global user.email "enter your github email"
+4.git add (FILE NAME)
+5.git commit -m "enter some"
+6.git push (copy the github repo https code and paste )
+7.git pull (copy the github repo https code and paste )
+8.mkdir (folder name)-make folder
+9.vim (file)-make file and insert data
+10.cat (file)-open file 
+11.git branch -m (master or main)-change branch
+12.git clone (copy the github repo https code and paste )

@@ -1,0 +1,27 @@
+## How to convert json file to csv file in python
+
+
+
+
+import csv
+import json
+import pandas as pd
+
+with open('C:/Users/SSS2022259/Downloads/kushiljson.json', 'r') as j: # Assigning file path to read
+    jdata = json.load(j) # loading json file data to jdata
+    # print(jdata)
+result = [] # to store output value
+# print(result)
+for data in jdata['people']: # to find no of elements and it will get element one by one
+    # print(data)
+    output = {}  # it will store the element value for specified key in dict format
+    # print(output)
+    for k in data.keys(): # it will get sub elements of above element
+        # print(k)
+        output[k] = data[k]  # here we call key base values
+        # print(output[k])
+    result.append(output)  # all the collected data is stored in result by appending method
+    # print(result)
+df = pd.DataFrame(result)  # converting results into DataFrames(in to structured data with lables)
+print(df)
+df.to_csv('kushilpy.csv', index=False)  # Convering DataFrames to CSV file

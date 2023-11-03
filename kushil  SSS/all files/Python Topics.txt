@@ -1,0 +1,44 @@
+
+Python:- 
+       Python is an interpreted, object-oriented, high-level programming language with dynamic semantics developed by Guido van Rossum in 1991.
+       Python is commonly used for developing websites and software, task automation, data analysis, and data visualization. 
+	   
+
+Topics:-
+        1.Variables
+        2.Data Types
+	3.keywords
+	4.Literals
+	5.operators
+	6.comments
+	7.If else
+	8.Loops (For and while)
+	9.Break
+       10.Continue
+       11.Pass
+       12.Functions
+       13.Built-in functions
+       14.Lamda functions
+       15.Modules
+       16.Python dates
+       17.Read,write and converting files (CSV,Excel,JSON)
+       18.OS modules
+       19.SYS modules
+       20.Python Stack and Queue
+       21.Web Scraping 
+
+
+
+
+TASKS:-
+       1.How to convert different types of JSON files into csv files.
+       2.How to extract data from websites by using web Scraping.
+       3.How to automate skype login page in python.
+       4.How to connect Oracle database from python and Modifying that data.
+       5.How to connect MYSQL database from python and modifying that data.
+       6.How to connect S3 buccket in AWS from python and Read that files data in python and uplpode some file in s3 by using pthon.
+       7.How to create an instance in AWS with python code.
+       8.How to create an instance without using def functions and also without including AWS credentials in that code.
+
+	   
+		

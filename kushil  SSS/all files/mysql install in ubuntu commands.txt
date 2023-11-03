@@ -1,0 +1,45 @@
+
+                    MYSQl-INSTALLATION-UBUNTU:-
+
+
+STEP 1:- MYSQL-INSTALLATION
+
+1. sudo apt update
+2. sudo apt-get install mysql-server
+
+
+STEP 2:- CHECK INSTALLATION
+
+1. systemctl is-active mysql
+2. systemctl start mysql-server
+
+STEP 3:-
+
+1. sudo mysql_secure_installation
+
+STEP 4:-LOGIN INTO MYSQL SERVER
+
+1.sudo mysql
+2.alter user 'root'@'localhost' identified with mysql_native_password by 'password@123';
+3.flush privilegs:
+
+STEP 5:- LOGIN WITH ROOT USER
+
+1. mysql -u root -p
+2.status;
+3.show variables like '%version%';
+
+4.create database demodb;
+5.create user 'username'@'%' identified by 'password@123';
+6.grant all privilegs on *.* to 'username'@'%' ;
+
+7.select user,host from mysql.user;
+8.show grants for 'username'@'%' ;
+
+
+
+STEP 6:- CHECK STATUS 
+
+1.systemctl status mysql-server
+2.systemctl stop mysql-server
+3.systemctl start mysql-server

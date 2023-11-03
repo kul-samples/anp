@@ -1,0 +1,6 @@
+You have successfully created a new activation. Your activation code is listed below. Copy this code and keep it in a safe place as you will not be able to access it again.
+Activation Code   nuhv2YRhIfEiZF4SkAXd
+
+Activation ID   b09f3f44-8022-4fda-9aa2-15b88cf9a134
+
+You can now install amazon-ssm-agent and manage your instance using Run Command. Learn more 

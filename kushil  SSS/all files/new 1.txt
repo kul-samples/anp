@@ -1,0 +1,19 @@
+import json
+import pandas as pd
+
+with open('C:/Users/SSS2022259/Downloads/jsontask2.json', 'r') as dd:
+    dd_data = json.load(dd)
+    res = []
+
+    for data in dd_data["users"]:
+        opt = {}
+
+        for d in data.keys():
+            opt[d] = data[d]
+
+        res.append(opt)
+        # print(res)
+
+    df = pd.DataFrame(res)
+    print(df)
+    df.to_csv('C:/Users/SSS2022259/OneDrive/Desktop/lll/jsontask2new.csv')
